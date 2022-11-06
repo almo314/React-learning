@@ -4,7 +4,7 @@ import s from './Profile.module.css';
 
 const Profile = () => {
     return (
-        <div className={s.content}>
+        <div>
             <div>
                 <img src='https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-literary-flowers-retro-background-image_17072.jpg' />
             </div>
