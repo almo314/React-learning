@@ -5,23 +5,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
+import StoreContext, {Provider} from "./StoreContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export let rerenderEntireTree = (state) => {
+export let rerenderEntireTree = () => {
     root.render(
         <BrowserRouter>
-            <React.StrictMode>
-                <App state={state} store={store} dispatch={store.dispatch.bind(store)}/>
-            </React.StrictMode>
+            <Provider store={store}>
+                <React.StrictMode>
+                    <App />
+                </React.StrictMode>
+            </Provider>
         </BrowserRouter>
     );
 };
-rerenderEntireTree(store.getState());
+rerenderEntireTree();
 
 store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 });
 
 reportWebVitals();
