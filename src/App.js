@@ -8,6 +8,7 @@ import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                     <Route path='/dialogs/*' element={<DialogsContainer />}/>
                     <Route path='/profile/*' element={<Profile />}/>
                     <Route path='/users/*' element={<UsersContainer />}/>
+                    {/*<Route path='/profile' element={<ProfileContainer />} />*/}
                     <Route path='/news/*' element={<News />}/>
                     <Route path='/music/*' element={<Music />}/>
                     <Route path='/settings/*' element={<Settings />}/>
