@@ -1,3 +1,6 @@
+import {usersAPI} from "../api/api";
+import axios from "axios";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
@@ -55,5 +58,13 @@ export const setUserProfile = (profile) => {
         profile
     }
 };
+
+export const getUserProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(profileId);
+    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + profileId).then(responce => {
+        dispatch(setUserProfile(responce.data));
+    });
+};
+
 
 export default profileReducer;
