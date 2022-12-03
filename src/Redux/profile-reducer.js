@@ -60,8 +60,8 @@ export const setUserProfile = (profile) => {
 };
 
 export const getUserProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(profileId);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + profileId).then(responce => {
+    usersAPI.getProfile(userId);
+    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId).then(responce => {
         dispatch(setUserProfile(responce.data));
     });
 };
